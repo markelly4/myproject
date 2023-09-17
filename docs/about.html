@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Materials and Methods</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -280,7 +280,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About</h1>
+<h1 class="title toc-ignore">Materials and Methods</h1>
 
 </div>
 
@@ -288,7 +288,7 @@ $(document).ready(function () {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -299,8 +299,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -309,13 +309,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-09-13
+<strong>Last updated:</strong> 2023-09-17
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>myproject/</code> <span
@@ -338,33 +338,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeca796ffd78a2abd89e9f60711fd6530565b1895btargetblankca796ffa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2c4a40814be6478c66da2120f1d9ed0cea02cd0btargetblank2c4a408a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/ca796ffd78a2abd89e9f60711fd6530565b1895b" target="_blank">ca796ff</a>
+<a href="https://github.com/markelly4/myproject/tree/2c4a40814be6478c66da2120f1d9ed0cea02cd0b" target="_blank">2c4a408</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeca796ffd78a2abd89e9f60711fd6530565b1895btargetblankca796ffa"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2c4a40814be6478c66da2120f1d9ed0cea02cd0btargetblank2c4a408a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -374,7 +377,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/ca796ffd78a2abd89e9f60711fd6530565b1895b" target="_blank">ca796ff</a>.
+<a href="https://github.com/markelly4/myproject/tree/2c4a40814be6478c66da2120f1d9ed0cea02cd0b" target="_blank">2c4a408</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -391,6 +394,18 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  bpsmodel.PNG
+    Untracked:  studyareamap.PNG
+
+Unstaged changes:
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/index.Rmd
+    Deleted:    oldgrowthtrees_creativecommons.jpg
+
+Staged changes:
+    New:        oldgrowthtrees_creativecommons.jpg
 
 </code></pre>
 <p>
@@ -437,61 +452,10 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/ca796ffd78a2abd89e9f60711fd6530565b1895b/docs/about.html" target="_blank">ca796ff</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/07c8c0499d5211ccb84386a04aacc63126211593/docs/about.html" target="_blank">07c8c04</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/7c9c2668fd0b06e4e1b79f381c497f61c36b3412/docs/about.html" target="_blank">7c9c266</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/markelly4/myproject/blob/ac4696910a25165be0ce9c56d5055c7e0cf75424/analysis/about.Rmd" target="_blank">ac46969</a>
+<a href="https://github.com/markelly4/myproject/blob/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/analysis/about.Rmd" target="_blank">2c4a408</a>
 </td>
 <td>
 marykelly4
@@ -500,7 +464,24 @@ marykelly4
 2023-09-13
 </td>
 <td>
-Start workflowr project.
+initial commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/docs/about.html" target="_blank">2c4a408</a>
+</td>
+<td>
+marykelly4
+</td>
+<td>
+2023-09-13
+</td>
+<td>
+initial commit
 </td>
 </tr>
 </tbody>
@@ -510,7 +491,74 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>Describe your project.</p>
+<p>The area of interest for this project is the western coast of Oregon
+(area west of the Cascade Mountains). This area is also known in
+LANDFIRE as map zone 2.</p>
+<p>All maps were created in ArcGIS Pro. All charts were plotted in
+R/R-Studio.</p>
+<p><a
+href="C:\Users\markelly\Documents\myproject\studyareamap.PNG">Figure 2.
+Study Area Map.</a></p>
+<div id="landfire-supplied-data-inputs" class="section level2">
+<h2>LANDFIRE supplied data inputs</h2>
+<p>LANDFIRE is a large US federal program that delivers dozens of
+datasets and hundreds of models for the US including Alaska, Hawaii and
+the insular areas such as Puerto Rico.</p>
+<p>We relied on these 3 LANDFIRE products:</p>
+<ol style="list-style-type: decimal">
+<li>Map of ecosystem footprints</li>
+<li>Estimated ‘reference’ amounts of open and closed succession classes:
+Biophysical Settings models</li>
+<li>Map of current succession classes: Succession Class data</li>
+</ol>
+<p>*NOTE: LANDFIRE data is delivered as geotifs with 30M pixel size.</p>
+</div>
+<div id="ecosystem-footprints" class="section level2">
+<h2>Ecosystem footprints</h2>
+<p>One LANDFIRE dataset we relied on is called “Biophysical Settings”
+(BpS). This dataset is a modeled depiction of the dominant vegetation
+systems prior to European colonization. It was developed with many
+abiotic inputs such as soils, surface geology and many climate inputs.
+You can think of the map as ’potential ecosystem footprints.</p>
+<p>Each BpS, such as a “western hemlock douglas fir forest” is
+accompanied by a description that includes information on its succession
+classes and a model which captures historical disturbances and estimated
+amounts of succession classes.</p>
+<p>[Figure 3. Map Zone 2 Ecosystem Footprint.](C:NMU’22- MQT.jpg)</p>
+</div>
+<div id="reference-succession-class-amounts" class="section level2">
+<h2>Reference succession class amounts</h2>
+<p>For each BpS, we needed to know how much late-open and late-closed
+each would have had historically. To do this, we referenced the BpS
+descriptions which have those estimates, and descriptions of the
+succession classes.</p>
+<p>Below is a screenshot of a BpS model, showing boxes, which represent
+the succession classes, or structural stages of an ecosystem; lines
+which represent succession and disturbances. What you don’t see here are
+the quantitative disturbance inputs from the model, or the outputs which
+include percent of each succession class that would have occurred
+historically.</p>
+<p>Since succession classes moved around the landscape LANDFIRE does not
+map where they were historically, only delivering percentages. This
+worked for our purposes.</p>
+<p><a href="C:\Users\markelly\Documents\myproject\bpsmodel.PNG">Figure
+4. BpS Model.</a></p>
+<p>##Current Succession Classes</p>
+<p>Finally, we used the LANDFIRE succession class dataset to get an idea
+of how much of each succession class occurs per BpS on the landscape
+today. Each pixel within a BpS is labled A through E for the “reference”
+states, and also includes labels for other categories such as
+agriculture and urban. We did a ‘combine’ in ArcGIS pro of the BpS and
+succession class data to get an estimate of the amounts of current
+succession classes per BpS.</p>
+<p>The rules for defining the structural characteristics of each
+succession class are in the BpS descriptions [HYPERLINK?], and area
+essentially combinations of height, cover and type. In a fictitious
+example, if there was a pixel mapped as western hemlock douglas fir with
+coniferious trees 25-50 M tall and with canopy cover 80-100% that might
+be labled as class E, late-closed.</p>
+<p>[Figure 5. Map zone 2 succession classes.](C:NMU’22- MQT.jpg)</p>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using

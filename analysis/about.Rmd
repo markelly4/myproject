@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Materials and Methods"
 output:
   workflowr::wflow_html:
     toc: false
@@ -7,4 +7,50 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+The area of interest for this project is the western coast of Oregon (area west of the Cascade Mountains). This area is also known in LANDFIRE as map zone 2.
+
+All maps were created in ArcGIS Pro. All charts were plotted in R/R-Studio.
+
+[Figure 2. Study Area Map.](C:\Users\markelly\Documents\myproject\studyareamap.PNG)
+
+## LANDFIRE supplied data inputs
+
+LANDFIRE is a large US federal program that delivers dozens of datasets and hundreds of models for the US including Alaska, Hawaii and the insular areas such as Puerto Rico.
+
+We relied on these 3 LANDFIRE products:
+
+1) Map of ecosystem footprints
+2) Estimated 'reference' amounts of open and closed succession classes: Biophysical Settings models
+3) Map of current succession classes: Succession Class data
+
+*NOTE: LANDFIRE data is delivered as geotifs with 30M pixel size.
+
+## Ecosystem footprints
+
+One LANDFIRE dataset we relied on is called “Biophysical Settings” (BpS). This dataset is a modeled depiction of the dominant vegetation systems prior to European colonization.  It was developed with many abiotic inputs such as soils, surface geology and many climate inputs. You can think of the map as ‘potential ecosystem footprints.  
+
+Each BpS, such as a “western hemlock douglas fir forest” is accompanied by a description that includes information on its succession classes and a model which captures historical disturbances and estimated amounts of succession classes.
+
+[Figure 3. Map Zone 2 Ecosystem Footprint.](C:\Users\markelly\OneDrive\Undergrad NMU\Coursework\Summer '22\NatureConservancy - MQT\Deliverables\historicOldGrowth.jpg)
+
+## Reference succession class amounts
+
+For each BpS, we needed to know how much late-open and late-closed each would have had historically.  To do this, we referenced the BpS descriptions which have those estimates, and descriptions of the succession classes.  
+
+Below is a screenshot of a BpS model, showing boxes, which represent the succession classes, or structural stages of an ecosystem; lines which represent succession and disturbances.  What you don’t see here are the quantitative disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically. 
+
+Since succession classes moved around the landscape LANDFIRE does not map where they were historically, only delivering percentages. This worked for our purposes.
+
+[Figure 4. BpS Model.](C:\Users\markelly\Documents\myproject\bpsmodel.PNG)
+
+## Current Succession Classes
+
+Finally, we used the LANDFIRE succession class dataset to get an idea of how much of each succession class occurs per BpS on the landscape today.  Each pixel within a BpS is labled A through E for the “reference” states, and also includes labels for other categories such as agriculture and urban.  We did a ‘combine’ in ArcGIS pro of the BpS and succession class data to get an estimate of the amounts of current succession classes per BpS.  
+
+The rules for defining the structural characteristics of each succession class are in the BpS descriptions [HYPERLINK?], and area essentially combinations of height, cover and type.  In a fictitious example, if there was a pixel mapped as western hemlock douglas fir with coniferious trees 25-50 M tall and with canopy cover 80-100% that might be labled as class E, late-closed.  
+
+[Figure 5. Map zone 2 succession classes.](C:\Users\markelly\OneDrive\Undergrad NMU\Coursework\Summer '22\NatureConservancy - MQT\Deliverables\currentOldGrowth.jpg)
+
+
+
+
