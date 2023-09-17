@@ -1,5 +1,5 @@
 ---
-title: "Materials and Methods"
+title: "Materials and Methods, Results"
 output:
   workflowr::wflow_html:
     toc: false
@@ -7,11 +7,13 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Materials and Methods
+
 The area of interest for this project is the western coast of Oregon (area west of the Cascade Mountains). This area is also known in LANDFIRE as map zone 2.
 
 All maps were created in ArcGIS Pro. All charts were plotted in R/R-Studio.
 
-[Figure 2. Study Area Map.](C:\Users\markelly\Documents\myproject\studyareamap.PNG)
+[Figure 2. Study Area Map.]
 
 ## LANDFIRE supplied data inputs
 
@@ -19,38 +21,111 @@ LANDFIRE is a large US federal program that delivers dozens of datasets and hund
 
 We relied on these 3 LANDFIRE products:
 
-1) Map of ecosystem footprints
-2) Estimated 'reference' amounts of open and closed succession classes: Biophysical Settings models
-3) Map of current succession classes: Succession Class data
+1)  Map of ecosystem footprints
+2)  Estimated 'reference' amounts of open and closed succession classes: Biophysical Settings models
+3)  Map of current succession classes: Succession Class data
 
-*NOTE: LANDFIRE data is delivered as geotifs with 30M pixel size.
+\*NOTE: LANDFIRE data is delivered as geotifs with 30M pixel size.
 
 ## Ecosystem footprints
 
-One LANDFIRE dataset we relied on is called “Biophysical Settings” (BpS). This dataset is a modeled depiction of the dominant vegetation systems prior to European colonization.  It was developed with many abiotic inputs such as soils, surface geology and many climate inputs. You can think of the map as ‘potential ecosystem footprints.  
+One LANDFIRE dataset we relied on is called "Biophysical Settings" (BpS). This dataset is a modeled depiction of the dominant vegetation systems prior to European colonization. It was developed with many abiotic inputs such as soils, surface geology and many climate inputs. You can think of the map as 'potential ecosystem footprints.
 
-Each BpS, such as a “western hemlock douglas fir forest” is accompanied by a description that includes information on its succession classes and a model which captures historical disturbances and estimated amounts of succession classes.
+Each BpS, such as a "western hemlock douglas fir forest" is accompanied by a description that includes information on its succession classes and a model which captures historical disturbances and estimated amounts of succession classes.
 
-[Figure 3. Map Zone 2 Ecosystem Footprint.](C:\Users\markelly\OneDrive\Undergrad NMU\Coursework\Summer '22\NatureConservancy - MQT\Deliverables\historicOldGrowth.jpg)
+[Figure 3. Map Zone 2 Ecosystem Footprint.]
 
 ## Reference succession class amounts
 
-For each BpS, we needed to know how much late-open and late-closed each would have had historically.  To do this, we referenced the BpS descriptions which have those estimates, and descriptions of the succession classes.  
+For each BpS, we needed to know how much late-open and late-closed each would have had historically. To do this, we referenced the BpS descriptions which have those estimates, and descriptions of the succession classes.
 
-Below is a screenshot of a BpS model, showing boxes, which represent the succession classes, or structural stages of an ecosystem; lines which represent succession and disturbances.  What you don’t see here are the quantitative disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically. 
+Below is a screenshot of a BpS model, showing boxes, which represent the succession classes, or structural stages of an ecosystem; lines which represent succession and disturbances. What you don't see here are the quantitative disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically.
 
 Since succession classes moved around the landscape LANDFIRE does not map where they were historically, only delivering percentages. This worked for our purposes.
 
-[Figure 4. BpS Model.](C:\Users\markelly\Documents\myproject\bpsmodel.PNG)
+[Figure 4. BpS Model.]
 
 ## Current Succession Classes
 
-Finally, we used the LANDFIRE succession class dataset to get an idea of how much of each succession class occurs per BpS on the landscape today.  Each pixel within a BpS is labled A through E for the “reference” states, and also includes labels for other categories such as agriculture and urban.  We did a ‘combine’ in ArcGIS pro of the BpS and succession class data to get an estimate of the amounts of current succession classes per BpS.  
+Finally, we used the LANDFIRE succession class dataset to get an idea of how much of each succession class occurs per BpS on the landscape today. Each pixel within a BpS is labled A through E for the "reference" states, and also includes labels for other categories such as agriculture and urban. We did a 'combine' in ArcGIS pro of the BpS and succession class data to get an estimate of the amounts of current succession classes per BpS.
 
-The rules for defining the structural characteristics of each succession class are in the BpS descriptions [HYPERLINK?], and area essentially combinations of height, cover and type.  In a fictitious example, if there was a pixel mapped as western hemlock douglas fir with coniferious trees 25-50 M tall and with canopy cover 80-100% that might be labled as class E, late-closed.  
+The rules for defining the structural characteristics of each succession class are in the BpS descriptions [HYPERLINK?], and area essentially combinations of height, cover and type. In a fictitious example, if there was a pixel mapped as western hemlock douglas fir with coniferious trees 25-50 M tall and with canopy cover 80-100% that might be labled as class E, late-closed.
 
-[Figure 5. Map zone 2 succession classes.](C:\Users\markelly\OneDrive\Undergrad NMU\Coursework\Summer '22\NatureConservancy - MQT\Deliverables\currentOldGrowth.jpg)
+[Figure 5. Map zone 2 succession classes.]
+
+# Results
+
+## Historic Ecosystems
+
+This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes pre-European Settlement. On the left axis are names of LANDFIRE’s BpSs. On the bottom axis are number of acres. The colors represent the age classes.  The purple and orange areas represent late succession ecosystems. Late1 and Late2 don’t necessarily mean open/closed canopy.
+
+There were 28 BpSs mapped in our area of interest.  In this chart we excluded BpSs with footprints of less than 10,000 acres for clarity. The North Pacific Maritime Mesic-Wet Douglas-fir-Western Hemlock Forest was most dominant at ~2.4 M acres with 1.7M acres of late successional habitat, followed by North Pacific Maritime Dry-Mesic Douglas-fir-Western Hemlock Forest at ~1.8 M acres and 1.1M acres of late successional habitat. Roughly 60% of the area is estimated to have been late successional habitat historically. Again, these are the “reference conditions” determined by local experts.
+
+[Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession  classes pre-European Settlement.]
+
+## Historic Late-Succesional %
+
+This map represents the historical percentages of late-successional forest by ecosystem. Darker green areas indicate higher percentages of late-successional forest. For historical ecosystems, percent of late successional forest ranged from 0-100%. Most areas fell within the 76-100% grouping. For this map, we used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS.
+
+[Figure 7. Map of historic percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data and BpS models.]
 
 
+## Current Late-Succesional %
+
+This map represents the estimated current percentages of late-successional forest by ecosystem. Darker green areas indicate higher percentages of late-successional forest. For current ecosystems, percent of late successional forest ranged from 0-100%. For this map, we used quantiles for the legend breaks.
+Combination of BpS and SClass attributes.
+
+Currently ~15% of the area is mapped as late succession. In the PNW we sometimes underestimate succession class height, and so the data may have been undermapped.
+
+[Figure 8. Map of current percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data, BpS models, and LANDFIRE Succession Classes (SClass).]
+
+## Current Late-Succesional % Change
+
+This map represents the percent change of late-successional forest by ecosystem. Darker green areas indicate an increase in the amount of LS forest, while brown areas indicate a loss. Percent of late successional forest ranged from an 81% loss to a 75% gain. Most areas saw a loss of 60% or more. For this map, we used jenks natural breaks for the legend breaks.
+
+Some areas in the southern portion of the study area saw a net gain in LS forest. This is perhaps due to a history of fire suppression in the area, or an increase in different vegetation types. Land ownership includes land managed by USFS, BLM, and private landowners.
+
+[Figure 9. Map of percent change in late successional forest.  Data mapped in ArcGIS Pro from LANDFIRE Succession Classes (SClass) and Biophysical Settings (BpS).]
 
 
+## Current Late-Succesional % Change
+
+This chart shows change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020. On the left axis are names of LANDFIRE’s BpS.  On the bottom axis is the percent change from historical to present-day. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+
+Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. Once again, these represent percentages of the whole ecosystem.
+
+[Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020.]
+
+## Historic Late-Successional % (open-canopy)
+
+This map represents the percent of historic late-successional forest that is open canopy. Darker purple areas indicate higher amounts of open canopy forest. For historic open-canopy ecosystems, percent of late successional forest ranged from 5-68%. For this map, we used jenks natural breaks for the legend breaks.
+
+[Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy.]
+
+## Historic Late-Successional % (closed-canopy)
+
+This map represents the percent of historic late-successional forest that is closed canopy. Darker red areas indicate higher amounts of closed canopy forest. For historic closed-canopy ecosystems, percent of late successional forest ranged from 1-92%. For this map, we used jenks natural breaks for the legend breaks. Coastal areas get more rain and the eastern spots are drier due to rain shadow.
+
+[Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy.]
+
+## Current Late-Successional % (open-canopy)
+
+This map represents the percent of current late-successional forest that is open canopy. Darker purple areas indicate higher amounts of open canopy forest. For current open-canopy ecosystems, percent of late successional forest ranged from 1-28%. For this map, we used jenks natural breaks for the legend breaks. There is very little open canopy ecosystem remaining.
+
+[Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy.]
+
+## Current Late-Successional % (closed-canopy)
+
+This map represents the percent of current late-successional forest that is closed canopy. Darker red areas indicate higher amounts of closed canopy forest. For current closed-canopy ecosystems, percent of late successional forest ranged from less than 1% to 82%. For this map, we used jenks natural breaks for the legend breaks.
+
+[Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy.]
+
+## Overall % Change in Late Successional Classes (Closed v. Open Canopy)
+
+This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020. On the left axis are names of LANDFIRE’s BpSs.  On the bottom axis is the percent change from historical to present-day. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+
+Example interpretation:
+1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest saw a ~73% decrease closed canopy and a ~5% decrease in open canopy.
+2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland saw a ~23% increase in closed canopy and a ~35% decrease in open canopy.
+
+[Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020]

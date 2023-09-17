@@ -11,7 +11,7 @@
 
 
 
-<title>License</title>
+<title>Discussion and Acknowledgements</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -280,7 +280,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">License</h1>
+<h1 class="title toc-ignore">Discussion and Acknowledgements</h1>
 
 </div>
 
@@ -288,7 +288,7 @@ $(document).ready(function () {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -299,8 +299,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -309,13 +309,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-09-13
+<strong>Last updated:</strong> 2023-09-17
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>myproject/</code> <span
@@ -338,33 +338,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeca796ffd78a2abd89e9f60711fd6530565b1895btargetblankca796ffa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree01fee4324f27792c9d99150715835e52f5bcb7f7targetblank01fee43a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/ca796ffd78a2abd89e9f60711fd6530565b1895b" target="_blank">ca796ff</a>
+<a href="https://github.com/markelly4/myproject/tree/01fee4324f27792c9d99150715835e52f5bcb7f7" target="_blank">01fee43</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeca796ffd78a2abd89e9f60711fd6530565b1895btargetblankca796ffa"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree01fee4324f27792c9d99150715835e52f5bcb7f7targetblank01fee43a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -374,7 +377,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/ca796ffd78a2abd89e9f60711fd6530565b1895b" target="_blank">ca796ff</a>.
+<a href="https://github.com/markelly4/myproject/tree/01fee4324f27792c9d99150715835e52f5bcb7f7" target="_blank">01fee43</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -391,6 +394,15 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  bpsmodel.PNG
+    Untracked:  studyareamap.PNG
+
+Unstaged changes:
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/license.Rmd
 
 </code></pre>
 <p>
@@ -438,53 +450,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
+Rmd
 </td>
 <td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/ca796ffd78a2abd89e9f60711fd6530565b1895b/docs/license.html" target="_blank">ca796ff</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/07c8c0499d5211ccb84386a04aacc63126211593/docs/license.html" target="_blank">07c8c04</a>
+<a href="https://github.com/markelly4/myproject/blob/01fee4324f27792c9d99150715835e52f5bcb7f7/analysis/license.Rmd" target="_blank">01fee43</a>
 </td>
 <td>
 marykelly4
 </td>
 <td>
-2023-09-13
+2023-09-17
 </td>
 <td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/7c9c2668fd0b06e4e1b79f381c497f61c36b3412/docs/license.html" target="_blank">7c9c266</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-Build site.
+Added text and figure links for intro and materials/methods.
 </td>
 </tr>
 <tr>
@@ -492,7 +470,7 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://github.com/markelly4/myproject/blob/ac4696910a25165be0ce9c56d5055c7e0cf75424/analysis/license.Rmd" target="_blank">ac46969</a>
+<a href="https://github.com/markelly4/myproject/blob/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/analysis/license.Rmd" target="_blank">2c4a408</a>
 </td>
 <td>
 marykelly4
@@ -501,7 +479,24 @@ marykelly4
 2023-09-13
 </td>
 <td>
-Start workflowr project.
+initial commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/docs/license.html" target="_blank">2c4a408</a>
+</td>
+<td>
+marykelly4
+</td>
+<td>
+2023-09-13
+</td>
+<td>
+initial commit
 </td>
 </tr>
 </tbody>
@@ -511,6 +506,37 @@ Start workflowr project.
 </div>
 </div>
 </div>
+<div id="caveats" class="section level2">
+<h2>CAVEATS</h2>
+<p>Caveats to be aware of: 1) We are just looking at trends over time.
+2) Mapping/modeling techniques of pre-settlement are different from the
+satellite maps of today. 3) Differentiation between open/closed canopy
+classes were determined in workshops led by local experts.</p>
+</div>
+<div id="discussion" class="section level2">
+<h2>DISCUSSION</h2>
+<p>Overall, late-successional forest in this part of Oregon has declined
+from pre-European conditions to present-day. Across the area, we saw an
+average loss of 60% of LS stands, with nearly all ecosystems losing
+open, and coastal ecosystems losing closed late successional. However,
+some areas have experienced a gain in LS forest, perhaps due to fire
+suppression.</p>
+<p>Our results demonstrate the importance of considering open canopy LS,
+especially in fire adapted ecosystems. If we only consider
+‘closed-canopy’ late succession habitat, we may underestimate those
+areas. Consideration of both canopy types could lead to a fuller
+understanding of the ecosystems at hand, as well as increased forest
+resiliency and stronger and more inclusive management strategies moving
+forward.</p>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2>ACKNOWLEDGEMENTS</h2>
+<ul>
+<li>LANDFIRE Team</li>
+<li>The Conservation Data Lab (<a
+href="https://conservationdatalab.org/"
+class="uri">https://conservationdatalab.org/</a>)</li>
+</ul>
 <p>What license are you using for your code? See <a
 href="https://choosealicense.com/">choosealicense.com</a> for help
 deciding. It’s a convention to save a file <code>LICENSE</code> in the
@@ -522,6 +548,7 @@ for this type of content.</p>
 <p>How should others cite your work? It’s a convention to save a file
 <code>CITATION</code> in the root of your Git repo that contains the
 citation information.</p>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
