@@ -13,7 +13,7 @@ The area of interest for this project is the western coast of Oregon (area west 
 
 All maps were created in ArcGIS Pro. All charts were plotted in R/R-Studio.
 
-![Study Area Map](/docs/assets/studyareamap.PNG)
+![Study Area Map](assets/studyareamap.PNG)
 
 ## LANDFIRE supplied data inputs
 
