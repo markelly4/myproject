@@ -15,7 +15,7 @@ Late-successional forests are typically defined by age, lack of disturbance, or 
 Disturbance-dependent ecosystems may have ‘open-canopy’ late succession habitat. For example, riparian area ecosystems may naturally have frequent ice scouring and/or flooding that removes some, but not all trees. Fire adapted ecosystems may have frequent surface fires that keep the canopy relatively open while preserving older and taller trees.  If we only consider ‘closed-canopy’ late succession habitat, we may underestimate those areas, and more importantly we may 1) miss areas for conservation and 2) miss trends of loss or gain. Further, due to changes in disturbance regimes, for example dam creation and fire-suppression, these potential open-canopy late succession habitats may need restoration.
 
 
-[Figure 1. Creative commons photo of late successional forest]
+![Figure 1. Opal Creek Old Growth with Young Trees, Willamette National Forest. Forest Service Pacific Northwest Region is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse.](assets/23934629855_1c50c725ae_c.jpg)
 
 Our guiding questions for this project are:
 

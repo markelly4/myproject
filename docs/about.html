@@ -13,7 +13,7 @@
 
 <title>Materials and Methods, Results</title>
 
-<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -32,8 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -72,7 +72,6 @@ if (window.hljs) {
 
 
 
-
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -93,9 +92,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -153,15 +149,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -190,8 +182,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -199,9 +191,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -245,7 +244,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -289,7 +288,7 @@ $(document).ready(function () {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -300,8 +299,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -314,12 +313,12 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>mks_project/</code> <span
+<strong>Knit directory:</strong> <code>myproject/</code> <span
 class="glyphicon glyphicon-question-sign" aria-hidden="true"
 title="This is the local directory in which the code in this file was executed.">
 </span>
@@ -328,7 +327,7 @@ title="This is the local directory in which the code in this file was executed."
 This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
 analysis was created with <a
   href="https://github.com/workflowr/workflowr">workflowr</a> (version
-1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
 that were applied when the results were created. The <em>Past
 versions</em> tab lists the development history.
 </p>
@@ -339,33 +338,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree057fb13ca1c00641dd0588941f82988fcba6de19targetblank057fb13a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreebd0ce3d3fc8a1064eafb3cc477311cd670eb97aatargetblankbd0ce3da">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/057fb13ca1c00641dd0588941f82988fcba6de19" target="_blank">057fb13</a>
+<a href="https://github.com/markelly4/myproject/tree/bd0ce3d3fc8a1064eafb3cc477311cd670eb97aa" target="_blank">bd0ce3d</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree057fb13ca1c00641dd0588941f82988fcba6de19targetblank057fb13a"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreebd0ce3d3fc8a1064eafb3cc477311cd670eb97aatargetblankbd0ce3da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -375,7 +377,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/057fb13ca1c00641dd0588941f82988fcba6de19" target="_blank">057fb13</a>.
+<a href="https://github.com/markelly4/myproject/tree/bd0ce3d3fc8a1064eafb3cc477311cd670eb97aa" target="_blank">bd0ce3d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -392,6 +394,10 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+
+Unstaged changes:
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -436,6 +442,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/bd0ce3d3fc8a1064eafb3cc477311cd670eb97aa/docs/about.html" target="_blank">bd0ce3d</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-09-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -606,8 +629,8 @@ LANDFIRE as map zone 2.</p>
 <p>All maps were created in ArcGIS Pro. All charts were plotted in
 R/R-Studio.</p>
 <div class="float">
-<img src="assets/studyareamap.PNG" alt="Study Area Map" />
-<div class="figcaption">Study Area Map</div>
+<img src="assets/studyareamap.PNG" alt="Figure 2. Study Area Map" />
+<div class="figcaption">Figure 2. Study Area Map</div>
 </div>
 <div id="landfire-supplied-data-inputs" class="section level2">
 <h2>LANDFIRE supplied data inputs</h2>
@@ -634,7 +657,11 @@ You can think of the map as ’potential ecosystem footprints.</p>
 accompanied by a description that includes information on its succession
 classes and a model which captures historical disturbances and estimated
 amounts of succession classes.</p>
-<p>[Figure 3. Map Zone 2 Ecosystem Footprint.]</p>
+<div class="float">
+<img src="assets/historicOldGrowth.jpg"
+alt="Figure 3. Map Zone 2 Ecosystem Footprint" />
+<div class="figcaption">Figure 3. Map Zone 2 Ecosystem Footprint</div>
+</div>
 </div>
 <div id="reference-succession-class-amounts" class="section level2">
 <h2>Reference succession class amounts</h2>
@@ -651,7 +678,10 @@ historically.</p>
 <p>Since succession classes moved around the landscape LANDFIRE does not
 map where they were historically, only delivering percentages. This
 worked for our purposes.</p>
-<p>[Figure 4. BpS Model.]</p>
+<div class="float">
+<img src="assets/bpsmodel.PNG" alt="Figure 4. BpS Model" />
+<div class="figcaption">Figure 4. BpS Model</div>
+</div>
 </div>
 <div id="current-succession-classes" class="section level2">
 <h2>Current Succession Classes</h2>
@@ -668,7 +698,8 @@ essentially combinations of height, cover and type. In a fictitious
 example, if there was a pixel mapped as western hemlock douglas fir with
 coniferious trees 25-50 M tall and with canopy cover 80-100% that might
 be labled as class E, late-closed.</p>
-<p>[Figure 5. Map zone 2 succession classes.]</p>
+<p><a href="assets/currentOldGrowth.jpg">Figure 5. Map zone 2 succession
+classes</a></p>
 </div>
 </div>
 <div id="results" class="section level1">
@@ -691,9 +722,13 @@ Douglas-fir-Western Hemlock Forest at ~1.8 M acres and 1.1M acres of
 late successional habitat. Roughly 60% of the area is estimated to have
 been late successional habitat historically. Again, these are the
 “reference conditions” determined by local experts.</p>
-<p>[Figure 6. Chart representing historical ecosystems of the area of
-interest, split out by estimated acres of the various succession classes
-pre-European Settlement.]</p>
+<div class="float">
+<img src="stacked_reference_reduced.png"
+alt="Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession classes pre-European Settlement." />
+<div class="figcaption">Figure 6. Chart representing historical
+ecosystems of the area of interest, split out by estimated acres of the
+various succession classes pre-European Settlement.</div>
+</div>
 </div>
 <div id="historic-late-succesional" class="section level2">
 <h2>Historic Late-Succesional %</h2>
@@ -704,9 +739,13 @@ successional forest ranged from 0-100%. Most areas fell within the
 76-100% grouping. For this map, we used quantiles for the legend breaks.
 Percent late-successional forest was joined to the BpS data as an
 attribute in GIS.</p>
-<p>[Figure 7. Map of historic percentages of late successional forest.
-Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data
-and BpS models.]</p>
+<div class="float">
+<img src="historicOldGrowth.jpg"
+alt="Figure 7. Map of historic percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data and BpS models." />
+<div class="figcaption">Figure 7. Map of historic percentages of late
+successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical
+Settings (BpS) data and BpS models.</div>
+</div>
 </div>
 <div id="current-late-succesional" class="section level2">
 <h2>Current Late-Succesional %</h2>
@@ -719,9 +758,14 @@ attributes.</p>
 <p>Currently ~15% of the area is mapped as late succession. In the PNW
 we sometimes underestimate succession class height, and so the data may
 have been undermapped.</p>
-<p>[Figure 8. Map of current percentages of late successional forest.
-Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data,
-BpS models, and LANDFIRE Succession Classes (SClass).]</p>
+<div class="float">
+<img src="currentOldGrowth.jpg"
+alt="Figure 8. Map of current percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data, BpS models, and LANDFIRE Succession Classes (SClass)." />
+<div class="figcaption">Figure 8. Map of current percentages of late
+successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical
+Settings (BpS) data, BpS models, and LANDFIRE Succession Classes
+(SClass).</div>
+</div>
 </div>
 <div id="current-late-succesional-change" class="section level2">
 <h2>Current Late-Succesional % Change</h2>
@@ -735,9 +779,13 @@ breaks.</p>
 in LS forest. This is perhaps due to a history of fire suppression in
 the area, or an increase in different vegetation types. Land ownership
 includes land managed by USFS, BLM, and private landowners.</p>
-<p>[Figure 9. Map of percent change in late successional forest. Data
-mapped in ArcGIS Pro from LANDFIRE Succession Classes (SClass) and
-Biophysical Settings (BpS).]</p>
+<div class="float">
+<img src="difference.jpg"
+alt="Figure 9. Map of percent change in late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Succession Classes (SClass) and Biophysical Settings (BpS)." />
+<div class="figcaption">Figure 9. Map of percent change in late
+successional forest. Data mapped in ArcGIS Pro from LANDFIRE Succession
+Classes (SClass) and Biophysical Settings (BpS).</div>
+</div>
 </div>
 <div id="current-late-succesional-change-1" class="section level2">
 <h2>Current Late-Succesional % Change</h2>
@@ -751,8 +799,13 @@ arrows indicate a loss, while the green ones represent a gain.</p>
 successional classes; 3 ecosystems experienced a gain in late
 successional classes. Once again, these represent percentages of the
 whole ecosystem.</p>
-<p>[Figure 10. Chart showing change in amounts of late-successional
-habitat by ecosystem, from modeled historical to mapped 2020.]</p>
+<div class="float">
+<img src="stacked_reference_reduced.png"
+alt="Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020." />
+<div class="figcaption">Figure 10. Chart showing change in amounts of
+late-successional habitat by ecosystem, from modeled historical to
+mapped 2020.</div>
+</div>
 </div>
 <div id="historic-late-successional-open-canopy" class="section level2">
 <h2>Historic Late-Successional % (open-canopy)</h2>
@@ -761,8 +814,12 @@ that is open canopy. Darker purple areas indicate higher amounts of open
 canopy forest. For historic open-canopy ecosystems, percent of late
 successional forest ranged from 5-68%. For this map, we used jenks
 natural breaks for the legend breaks.</p>
-<p>[Figure 11. Map of percent of historic late successional ecosystems
-that are classified as open canopy.]</p>
+<div class="float">
+<img src="historicOldGrowth_open.png"
+alt="Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy." />
+<div class="figcaption">Figure 11. Map of percent of historic late
+successional ecosystems that are classified as open canopy.</div>
+</div>
 </div>
 <div id="historic-late-successional-closed-canopy"
 class="section level2">
@@ -773,8 +830,12 @@ closed canopy forest. For historic closed-canopy ecosystems, percent of
 late successional forest ranged from 1-92%. For this map, we used jenks
 natural breaks for the legend breaks. Coastal areas get more rain and
 the eastern spots are drier due to rain shadow.</p>
-<p>[Figure 12. Map of percent of historic late successional ecosystems
-that are classified as closed canopy.]</p>
+<div class="float">
+<img src="historicOldGrowth_closed.png"
+alt="Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy." />
+<div class="figcaption">Figure 12. Map of percent of historic late
+successional ecosystems that are classified as closed canopy.</div>
+</div>
 </div>
 <div id="current-late-successional-open-canopy" class="section level2">
 <h2>Current Late-Successional % (open-canopy)</h2>
@@ -784,8 +845,12 @@ canopy forest. For current open-canopy ecosystems, percent of late
 successional forest ranged from 1-28%. For this map, we used jenks
 natural breaks for the legend breaks. There is very little open canopy
 ecosystem remaining.</p>
-<p>[Figure 13. Map of percent of current late successional ecosystems
-that are classified as open canopy.]</p>
+<div class="float">
+<img src="currentOldGrowth_open.png"
+alt="Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy." />
+<div class="figcaption">Figure 13. Map of percent of current late
+successional ecosystems that are classified as open canopy.</div>
+</div>
 </div>
 <div id="current-late-successional-closed-canopy"
 class="section level2">
@@ -795,8 +860,12 @@ that is closed canopy. Darker red areas indicate higher amounts of
 closed canopy forest. For current closed-canopy ecosystems, percent of
 late successional forest ranged from less than 1% to 82%. For this map,
 we used jenks natural breaks for the legend breaks.</p>
-<p>[Figure 14. Map of percent of current late successional ecosystems
-that are classified as closed canopy.]</p>
+<div class="float">
+<img src="currentOldGrowth_closed.png"
+alt="Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy." />
+<div class="figcaption">Figure 14. Map of percent of current late
+successional ecosystems that are classified as closed canopy.</div>
+</div>
 </div>
 <div
 id="overall-change-in-late-successional-classes-closed-v.-open-canopy"
@@ -815,9 +884,13 @@ Douglas-fir Western Hemlock Forest saw a ~73% decrease closed canopy and
 a ~5% decrease in open canopy. 2) Mediterranean California Dry-Mesic
 Mixed Conifer Forest and Woodland saw a ~23% increase in closed canopy
 and a ~35% decrease in open canopy.</p>
-<p>[Figure 15. Chart showing change in amounts of late-successional open
-and closed canopy habitat by ecosystem, from modeled historical to
-mapped 2020]</p>
+<div class="float">
+<img src="og_change_by_canopy.png"
+alt="Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020" />
+<div class="figcaption">Figure 15. Chart showing change in amounts of
+late-successional open and closed canopy habitat by ecosystem, from
+modeled historical to mapped 2020</div>
+</div>
 </div>
 </div>
 
