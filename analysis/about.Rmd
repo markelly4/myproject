@@ -51,7 +51,7 @@ Finally, we used the LANDFIRE succession class dataset to get an idea of how muc
 
 The rules for defining the structural characteristics of each succession class are in the [BpS descriptions](https://www.landfire.gov/bps-models.php), and are essentially combinations of height, cover and type. In a fictitious example, if there was a pixel mapped as western hemlock douglas fir with coniferious trees 25-50 M tall and with canopy cover 80-100% that might be labled as class E, late-closed.
 
-![Figure 5. Current Percentages of Late-Successional Forest](assets/currentOldGrowth.PNG)
+![Figure 5. Current Percentages of Late-Successional Forest](assets/currentOldGrowth.jpg)
 
 # Results
 
@@ -61,13 +61,13 @@ This chart represents the historical ecosystems of our area of interest, split o
 
 There were 28 BpSs mapped in our area of interest.  In this chart we excluded BpSs with footprints of less than 10,000 acres for clarity. The North Pacific Maritime Mesic-Wet Douglas-fir-Western Hemlock Forest was most dominant at ~2.4 M acres with 1.7M acres of late successional habitat, followed by North Pacific Maritime Dry-Mesic Douglas-fir-Western Hemlock Forest at ~1.8 M acres and 1.1M acres of late successional habitat. Roughly 60% of the area is estimated to have been late successional habitat historically. Again, these are the “reference conditions” determined by local experts.
 
-![Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession  classes pre-European Settlement.](stacked_reference_reduced.png)
+![Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession  classes pre-European Settlement.](assets/stacked_reference_reduced.png)
 
 ## Historic Late-Succesional %
 
 This map represents the historical percentages of late-successional forest by ecosystem. Darker green areas indicate higher percentages of late-successional forest. For historical ecosystems, percent of late successional forest ranged from 0-100%. Most areas fell within the 76-100% grouping. For this map, we used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS.
 
-![Figure 7. Map of historic percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data and BpS models.](historicOldGrowth.jpg)
+![Figure 7. Map of historic percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data and BpS models.](assets/historicOldGrowth.jpg)
 
 
 ## Current Late-Succesional %
@@ -77,7 +77,7 @@ Combination of BpS and SClass attributes.
 
 Currently ~15% of the area is mapped as late succession. In the PNW we sometimes underestimate succession class height, and so the data may have been undermapped.
 
-![Figure 8. Map of current percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data, BpS models, and LANDFIRE Succession Classes (SClass).](currentOldGrowth.jpg)
+![Figure 8. Map of current percentages of late successional forest. Data mapped in ArcGIS Pro from LANDFIRE Biophysical Settings (BpS) data, BpS models, and LANDFIRE Succession Classes (SClass).](assets/currentOldGrowth.jpg)
 
 ## Current Late-Succesional % Change
 
@@ -85,7 +85,7 @@ This map represents the percent change of late-successional forest by ecosystem.
 
 Some areas in the southern portion of the study area saw a net gain in LS forest. This is perhaps due to a history of fire suppression in the area, or an increase in different vegetation types. Land ownership includes land managed by USFS, BLM, and private landowners.
 
-![Figure 9. Map of percent change in late successional forest.  Data mapped in ArcGIS Pro from LANDFIRE Succession Classes (SClass) and Biophysical Settings (BpS).](difference.jpg)
+![Figure 9. Map of percent change in late successional forest.  Data mapped in ArcGIS Pro from LANDFIRE Succession Classes (SClass) and Biophysical Settings (BpS).](assets/difference.jpg)
 
 
 ## Current Late-Succesional % Change
@@ -94,31 +94,31 @@ This chart shows change in amounts of late-successional habitat by ecosystem, fr
 
 Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. Once again, these represent percentages of the whole ecosystem.
 
-![Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020.](stacked_reference_reduced.png)
+![Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020.](assets/stacked_reference_reduced.png)
 
 ## Historic Late-Successional % (open-canopy)
 
 This map represents the percent of historic late-successional forest that is open canopy. Darker purple areas indicate higher amounts of open canopy forest. For historic open-canopy ecosystems, percent of late successional forest ranged from 5-68%. For this map, we used jenks natural breaks for the legend breaks.
 
-![Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy.](historicOldGrowth_open.png)
+![Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy.](assets/historicOldGrowth_open.png)
 
 ## Historic Late-Successional % (closed-canopy)
 
 This map represents the percent of historic late-successional forest that is closed canopy. Darker red areas indicate higher amounts of closed canopy forest. For historic closed-canopy ecosystems, percent of late successional forest ranged from 1-92%. For this map, we used jenks natural breaks for the legend breaks. Coastal areas get more rain and the eastern spots are drier due to rain shadow.
 
-![Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy.](historicOldGrowth_closed.png)
+![Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy.](assets/historicOldGrowth_closed.png)
 
 ## Current Late-Successional % (open-canopy)
 
 This map represents the percent of current late-successional forest that is open canopy. Darker purple areas indicate higher amounts of open canopy forest. For current open-canopy ecosystems, percent of late successional forest ranged from 1-28%. For this map, we used jenks natural breaks for the legend breaks. There is very little open canopy ecosystem remaining.
 
-![Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy.](currentOldGrowth_open.png)
+![Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy.](assets/currentOldGrowth_open.png)
 
 ## Current Late-Successional % (closed-canopy)
 
 This map represents the percent of current late-successional forest that is closed canopy. Darker red areas indicate higher amounts of closed canopy forest. For current closed-canopy ecosystems, percent of late successional forest ranged from less than 1% to 82%. For this map, we used jenks natural breaks for the legend breaks.
 
-![Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy.](currentOldGrowth_closed.png)
+![Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy.](assets/currentOldGrowth_closed.png)
 
 ## Overall % Change in Late Successional Classes (Closed v. Open Canopy)
 
@@ -128,4 +128,4 @@ Example interpretation:
 1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest saw a ~73% decrease closed canopy and a ~5% decrease in open canopy.
 2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland saw a ~23% increase in closed canopy and a ~35% decrease in open canopy.
 
-![Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020](og_change_by_canopy.png)
+![Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020](assets/og_change_by_canopy.png)
