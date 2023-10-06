@@ -1,0 +1,15 @@
+---
+title: "Methods"
+author: "rswaty"
+date: "2023-10-06"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Mary pastes and adds methods to this page (or Randy)
+
+```{r}
+
+```
+
