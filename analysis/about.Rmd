@@ -130,12 +130,4 @@ Example interpretation:
 
 ![Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020](assets/og_change_by_canopy.png)
 
-<br>
-
-```{r cars plot, echo=FALSE, out.width="20%"}
-plot(cars)
-```
-
-
-
 

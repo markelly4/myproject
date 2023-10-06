@@ -1,10 +1,12 @@
 name: myproject
 output_dir: ../docs
 navbar:
-  title: myproject
+  title: Old-Growth
   left:
   - text: Home
     href: index.html
+  - text: Methods
+    href: methods.html
   - text: About
     href: about.html
   - text: License
@@ -17,5 +19,5 @@ output:
   workflowr::wflow_html:
     toc: yes
     toc_float: yes
-    theme: cosmo
+    theme: flatly
     highlight: textmate
