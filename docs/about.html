@@ -258,6 +258,9 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
+  <a href="methods.html">Methods</a>
+</li>
+<li>
   <a href="about.html">About</a>
 </li>
 <li>
@@ -310,11 +313,11 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-10-05
+<strong>Last updated:</strong> 2023-10-06
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span> 0
 </p>
@@ -357,15 +360,99 @@ results.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreedf8eb091ebe9b2ce170806336fae3cc0d1fbdb24targetblankdf8eb09a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20230913code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20230913)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20230913code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20230913)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree841f89bb2ac3c68d51687e9f7bea003758a72a55targetblank841f89ba">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/df8eb091ebe9b2ce170806336fae3cc0d1fbdb24" target="_blank">df8eb09</a>
+<a href="https://github.com/markelly4/myproject/tree/841f89bb2ac3c68d51687e9f7bea003758a72a55" target="_blank">841f89b</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreedf8eb091ebe9b2ce170806336fae3cc0d1fbdb24targetblankdf8eb09a"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree841f89bb2ac3c68d51687e9f7bea003758a72a55targetblank841f89ba"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -375,7 +462,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/df8eb091ebe9b2ce170806336fae3cc0d1fbdb24" target="_blank">df8eb09</a>.
+<a href="https://github.com/markelly4/myproject/tree/841f89bb2ac3c68d51687e9f7bea003758a72a55" target="_blank">841f89b</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -392,6 +479,9 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+
+Unstaged changes:
+    Modified:   analysis/_site.yml
 
 </code></pre>
 <p>
@@ -436,6 +526,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/markelly4/myproject/blob/841f89bb2ac3c68d51687e9f7bea003758a72a55/analysis/about.Rmd" target="_blank">841f89b</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-10-06
+</td>
+<td>
+added methods
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/2ab92ec57d93d49ea36b3fbe9ed8d539fc60222e/docs/about.html" target="_blank">2ab92ec</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-10-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1028,6 +1152,49 @@ alt="Figure 15. Chart showing change in amounts of late-successional open and cl
 <div class="figcaption">Figure 15. Chart showing change in amounts of
 late-successional open and closed canopy habitat by ecosystem, from
 modeled historical to mapped 2020</div>
+</div>
+<p><br></p>
+<p><img src="figure/about.Rmd/cars%20plot-1.png" width="20%" style="display: block; margin: auto;" /></p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.2.2 Patched (2022-11-30 r83413 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 22621)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.utf8    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.7.0
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       highr_0.10        compiler_4.2.2    pillar_1.9.0     
+ [5] bslib_0.5.0       later_1.3.1       git2r_0.32.0      jquerylib_0.1.4  
+ [9] tools_4.2.2       getPass_0.2-2     digest_0.6.33     jsonlite_1.8.7   
+[13] evaluate_0.21     lifecycle_1.0.3   tibble_3.2.1      pkgconfig_2.0.3  
+[17] rlang_1.1.1       cli_3.6.1         rstudioapi_0.15.0 yaml_2.3.7       
+[21] xfun_0.39         fastmap_1.1.1     httr_1.4.7        stringr_1.5.0    
+[25] knitr_1.42        fs_1.6.3          vctrs_0.6.3       sass_0.4.7       
+[29] rprojroot_2.0.3   glue_1.6.2        R6_2.5.1          processx_3.8.2   
+[33] fansi_1.0.4       rmarkdown_2.23    callr_3.7.3       magrittr_2.0.3   
+[37] whisker_0.4.1     ps_1.7.5          promises_1.2.0.1  htmltools_0.5.5  
+[41] httpuv_1.6.11     utf8_1.2.3        stringi_1.7.12    cachem_1.0.8     </code></pre>
 </div>
 </div>
 </div>
