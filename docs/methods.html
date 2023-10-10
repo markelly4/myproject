@@ -9,9 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="rswaty" />
 
-<meta name="date" content="2023-10-06" />
 
 <title>Methods</title>
 
@@ -35,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -232,6 +231,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -335,13 +337,16 @@ div.tocify {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="about.html">About</a>
-</li>
-<li>
   <a href="methods.html">Methods</a>
 </li>
 <li>
+  <a href="results.html">Results</a>
+</li>
+<li>
   <a href="discussion.html">Discussion</a>
+</li>
+<li>
+  <a href="about.html">About</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -359,11 +364,17 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Methods</h1>
-<h4 class="author">rswaty</h4>
-<h4 class="date">2023-10-06</h4>
 
 </div>
 
@@ -392,7 +403,7 @@ aria-hidden="true"></span> </a>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-10-06
+<strong>Last updated:</strong> 2023-10-09
 </p>
 <p>
 <strong>Checks:</strong> <span
@@ -442,15 +453,15 @@ HTML.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeafb7e804e70dbfc0e9e4d9ba76c24c7326457d01targetblankafb7e80a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreecf5b13b63879dcf3866c7aa28dac3d221cae5b3atargetblankcf5b13ba">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/afb7e804e70dbfc0e9e4d9ba76c24c7326457d01" target="_blank">afb7e80</a>
+<a href="https://github.com/markelly4/myproject/tree/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a" target="_blank">cf5b13b</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreeafb7e804e70dbfc0e9e4d9ba76c24c7326457d01targetblankafb7e80a"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreecf5b13b63879dcf3866c7aa28dac3d221cae5b3atargetblankcf5b13ba"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -460,7 +471,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/afb7e804e70dbfc0e9e4d9ba76c24c7326457d01" target="_blank">afb7e80</a>.
+<a href="https://github.com/markelly4/myproject/tree/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a" target="_blank">cf5b13b</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -478,15 +489,13 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  analysis/discussion.Rmd
-    Untracked:  analysis/results.Rmd
-
 Unstaged changes:
     Modified:   analysis/_site.yml
     Modified:   analysis/about.Rmd
-    Deleted:    analysis/license.Rmd
+    Modified:   analysis/discussion.Rmd
+    Modified:   analysis/index.Rmd
     Modified:   analysis/methods.Rmd
+    Modified:   analysis/results.Rmd
 
 </code></pre>
 <p>
@@ -532,6 +541,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/markelly4/myproject/blob/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a/analysis/methods.Rmd" target="_blank">cf5b13b</a>
+</td>
+<td>
+marykelly4
+</td>
+<td>
+2023-10-06
+</td>
+<td>
+organizational edits
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a/docs/methods.html" target="_blank">cf5b13b</a>
+</td>
+<td>
+marykelly4
+</td>
+<td>
+2023-10-06
+</td>
+<td>
+organizational edits
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -597,10 +640,12 @@ added methods
 LANDFIRE as map zone 2.</p>
 <p>All maps were created in ArcGIS Pro. All charts were plotted in
 R/R-Studio.</p>
-<div class="float">
-<img src="assets/studyareamap.PNG" alt="Figure 2. Study Area Map" />
-<div class="figcaption">Figure 2. Study Area Map</div>
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Study_Area_MapZone2" src="//northernmichu.maps.arcgis.com/apps/Embed/index.html?webmap=a5f6b8578bf2444eaf19220893cfcf65&amp;extent=-138.3318,20.6047,-52.1111,52.3035&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;disable_scroll=true&amp;theme=light">
+</iframe>
 </div>
+<p>Figure 2. Study Area Map</p>
 <div id="landfire-supplied-data-inputs" class="section level2">
 <h2>LANDFIRE supplied data inputs</h2>
 <p>LANDFIRE is a large US federal program that delivers dozens of
@@ -627,7 +672,7 @@ accompanied by a description that includes information on its succession
 classes and a model which captures historical disturbances and estimated
 amounts of succession classes.</p>
 <div class="float">
-<img src="assets/historicOldGrowth.jpg"
+<img src="assets/historicOldGrowth.jpg" style="width:50.0%"
 alt="Figure 3. Map Zone 2 Ecosystem Footprint" />
 <div class="figcaption">Figure 3. Map Zone 2 Ecosystem Footprint</div>
 </div>
@@ -669,7 +714,7 @@ example, if there was a pixel mapped as western hemlock douglas fir with
 coniferious trees 25-50 M tall and with canopy cover 80-100% that might
 be labled as class E, late-closed.</p>
 <div class="float">
-<img src="assets/currentOldGrowth.jpg"
+<img src="assets/currentOldGrowth.jpg" style="width:50.0%"
 alt="Figure 5. Current Percentages of Late-Successional Forest" />
 <div class="figcaption">Figure 5. Current Percentages of
 Late-Successional Forest</div>
@@ -726,6 +771,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {

@@ -5,12 +5,14 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: About
-    href: about.html
   - text: Methods
     href: methods.html
+  - text: Results
+    href: results.html
   - text: Discussion
     href: discussion.html
+  - text: About
+    href: about.html
   right:
   - icon: fab fa-github
     text: Source code

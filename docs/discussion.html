@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Discussion</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,7 +29,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -227,7 +231,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -237,6 +307,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -284,9 +364,17 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">About</h1>
+
+<h1 class="title toc-ignore">Discussion</h1>
 
 </div>
 
@@ -425,10 +513,11 @@ have uncommitted changes.
 
 <p>
 These are the previous versions of the repository in which changes were
-made to the R Markdown (<code>analysis/about.Rmd</code>) and HTML
-(<code>docs/about.html</code>) files. If you’ve configured a remote Git
-repository (see <code>?wflow_git_remote</code>), click on the hyperlinks
-in the table below to view the files as they were in that past version.
+made to the R Markdown (<code>analysis/discussion.Rmd</code>) and HTML
+(<code>docs/discussion.html</code>) files. If you’ve configured a remote
+Git repository (see <code>?wflow_git_remote</code>), click on the
+hyperlinks in the table below to view the files as they were in that
+past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -457,7 +546,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/markelly4/myproject/blob/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a/analysis/about.Rmd" target="_blank">cf5b13b</a>
+<a href="https://github.com/markelly4/myproject/blob/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a/analysis/discussion.Rmd" target="_blank">cf5b13b</a>
 </td>
 <td>
 marykelly4
@@ -467,436 +556,6 @@ marykelly4
 </td>
 <td>
 organizational edits
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/cf5b13b63879dcf3866c7aa28dac3d221cae5b3a/docs/about.html" target="_blank">cf5b13b</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-organizational edits
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/afb7e804e70dbfc0e9e4d9ba76c24c7326457d01/analysis/about.Rmd" target="_blank">afb7e80</a>
-</td>
-<td>
-Randy Swaty
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-added methods page
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/afb7e804e70dbfc0e9e4d9ba76c24c7326457d01/docs/about.html" target="_blank">afb7e80</a>
-</td>
-<td>
-Randy Swaty
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-added methods page
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/acee7218673fac685ebf1817c247a925196535c5/docs/about.html" target="_blank">acee721</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/39806f4a870d321e3d042565710e94a6fa0758fd/docs/about.html" target="_blank">39806f4</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/841f89bb2ac3c68d51687e9f7bea003758a72a55/analysis/about.Rmd" target="_blank">841f89b</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-10-06
-</td>
-<td>
-added methods
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/2ab92ec57d93d49ea36b3fbe9ed8d539fc60222e/docs/about.html" target="_blank">2ab92ec</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-10-05
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/38f32de5d9455c48010cda2741abc8838c27da04/docs/about.html" target="_blank">38f32de</a>
-</td>
-<td>
-Randy Swaty
-</td>
-<td>
-2023-10-05
-</td>
-<td>
-Merge branch ‘main’ of <a href="https://github.com/markelly4/myproject"
-class="uri">https://github.com/markelly4/myproject</a>
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/fbbebf645867ce2613cbf55a45efb71aa8add10d/docs/about.html" target="_blank">fbbebf6</a>
-</td>
-<td>
-Randy Swaty
-</td>
-<td>
-2023-10-05
-</td>
-<td>
-work on about page
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/9ff75d00bc71bdffb79183fb20ab2b0dda565334/analysis/about.Rmd" target="_blank">9ff75d0</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-10-02
-</td>
-<td>
-Fixed all graphics. Next steps are to add the "get code" buttons for the
-charts?
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/9ff75d00bc71bdffb79183fb20ab2b0dda565334/docs/about.html" target="_blank">9ff75d0</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-10-02
-</td>
-<td>
-Fixed all graphics. Next steps are to add the "get code" buttons for the
-charts?
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/2afe8381db1fb9620df731f09cdb0cbcb7b4def6/analysis/about.Rmd" target="_blank">2afe838</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-10-02
-</td>
-<td>
-graphics issues - "file path not found"
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/2afe8381db1fb9620df731f09cdb0cbcb7b4def6/docs/about.html" target="_blank">2afe838</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-10-02
-</td>
-<td>
-graphics issues - "file path not found"
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/af47282d30d7dcad95df5cad02d928cac104dc83/analysis/about.Rmd" target="_blank">af47282</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-28
-</td>
-<td>
-Added figure captions and graphics thru fig. 4.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/af47282d30d7dcad95df5cad02d928cac104dc83/docs/about.html" target="_blank">af47282</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-28
-</td>
-<td>
-Added figure captions and graphics thru fig. 4.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/bd0ce3d3fc8a1064eafb3cc477311cd670eb97aa/docs/about.html" target="_blank">bd0ce3d</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-09-28
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/057fb13ca1c00641dd0588941f82988fcba6de19/analysis/about.Rmd" target="_blank">057fb13</a>
-</td>
-<td>
-rswaty
-</td>
-<td>
-2023-09-28
-</td>
-<td>
-Publish the initial files for myproject
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/9b512272698b7c3a53ea4697cc140dc15986c07b/docs/about.html" target="_blank">9b51227</a>
-</td>
-<td>
-Randy Swaty
-</td>
-<td>
-2023-09-28
-</td>
-<td>
-working to fix issue with images
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/83b89c8523550c8a063fc91effab15957f066451/analysis/about.Rmd" target="_blank">83b89c8</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-27
-</td>
-<td>
-Need to insert images
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/0a9f4133884447ba2a7f261ba179d389bdf39166/analysis/about.Rmd" target="_blank">0a9f413</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-17
-</td>
-<td>
-Completed site "skeleton". Next steps are to insert graphics, adjust
-website tab names, and clean up headings…
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/0a9f4133884447ba2a7f261ba179d389bdf39166/docs/about.html" target="_blank">0a9f413</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-17
-</td>
-<td>
-Completed site "skeleton". Next steps are to insert graphics, adjust
-website tab names, and clean up headings…
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/01fee4324f27792c9d99150715835e52f5bcb7f7/analysis/about.Rmd" target="_blank">01fee43</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-17
-</td>
-<td>
-Added text and figure links for intro and materials/methods.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/01fee4324f27792c9d99150715835e52f5bcb7f7/docs/about.html" target="_blank">01fee43</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-17
-</td>
-<td>
-Added text and figure links for intro and materials/methods.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/markelly4/myproject/blob/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/analysis/about.Rmd" target="_blank">2c4a408</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-initial commit
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/markelly4/myproject/2c4a40814be6478c66da2120f1d9ed0cea02cd0b/docs/about.html" target="_blank">2c4a408</a>
-</td>
-<td>
-marykelly4
-</td>
-<td>
-2023-09-13
-</td>
-<td>
-initial commit
 </td>
 </tr>
 </tbody>
@@ -906,22 +565,46 @@ initial commit
 </div>
 </div>
 </div>
-<div id="mary-kelly" class="section level2">
-<h2>Mary Kelly</h2>
-<p>Mary is a senior undergraduate student at Northern Michigan
-University (NMU), double-majoring in Environmental Science (natural
-resources emphasis) and French. Entering her final year of college, Mary
-leads two NMU student organizations, is an alumna of the NMU Student
-Leader Fellowship Program, and has interned in the federal government
-and non-profit conservation spaces. She is a member of the Conservation
-Data Lab (CDL). Mary’s favorite part of the CDL is being part of a
-community of people who care for the well-being of the environment.
-After graduating with her Bachelor’s of Science degree in May 2024, Mary
-hopes to attend graduate school for a Master’s degree or start working
-full-time.</p>
+<div id="caveats" class="section level2">
+<h2>Caveats</h2>
+<p>Caveats to be aware of: 1) We are just looking at trends over time.
+2) Mapping/modeling techniques of pre-settlement are different from the
+satellite maps of today. 3) Differentiation between open/closed canopy
+classes were determined in workshops led by local experts.</p>
 </div>
-<div id="randy-swaty" class="section level2">
-<h2>Randy Swaty</h2>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<div id="summary-and-patterns" class="section level3">
+<h3>Summary and patterns</h3>
+<p>Overall, late-successional forest in this part of Oregon has declined
+from pre-European conditions to present-day. Across the area, we saw an
+average loss of 60% of LS stands, with nearly all ecosystems losing
+open, and coastal ecosystems losing closed late successional. However,
+some areas have experienced a gain in LS forest, perhaps due to fire
+suppression.</p>
+</div>
+<div id="our-contributions" class="section level3">
+<h3>Our contributions</h3>
+<p>Our results demonstrate the importance of considering open canopy LS,
+especially in fire adapted ecosystems. If we only consider
+‘closed-canopy’ late succession habitat, we may underestimate those
+areas. Consideration of both canopy types could lead to a fuller
+understanding of the ecosystems at hand, as well as increased forest
+resiliency and stronger and more inclusive management strategies moving
+forward.</p>
+</div>
+<div id="future-directions" class="section level3">
+<h3>Future directions</h3>
+</div>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2>Acknowledgements</h2>
+<ul>
+<li>LANDFIRE Team</li>
+<li>The Conservation Data Lab (<a
+href="https://conservationdatalab.org/"
+class="uri">https://conservationdatalab.org/</a>)</li>
+</ul>
 </div>
 
 
@@ -940,6 +623,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -971,7 +656,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

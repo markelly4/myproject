@@ -3,6 +3,7 @@ title: "Discussion"
 output:
   workflowr::wflow_html:
     toc: true
+    code_folding: hide
 editor_options:
   chunk_output_type: console
 ---
