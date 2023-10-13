@@ -50,7 +50,7 @@ This chart shows change in amounts of late-successional habitat by ecosystem, fr
 
 Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. Once again, these represent percentages of the whole ecosystem.
 
-![Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020.](assets/stacked_reference_reduced.png){width=50%}
+![Figure 10. Chart showing change in amounts of late-successional habitat by ecosystem, from modeled historical to mapped 2020.](assets/late_loss.png)
 
 ## Historic Late-Successional % (open-canopy)
 
