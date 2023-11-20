@@ -399,7 +399,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -410,8 +410,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -424,9 +424,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>mks_project/</code> <span
@@ -449,21 +449,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of
-the R Markdown file created these results, you’ll want to first commit
-it to the Git repo. If you’re still working on the analysis, you can
-ignore this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -554,15 +551,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28targetblank2f9aedba">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreefaf9daac40d730cf1e8f251782911342c1181a2btargetblankfaf9daaa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28" target="_blank">2f9aedb</a>
+<a href="https://github.com/markelly4/myproject/tree/faf9daac40d730cf1e8f251782911342c1181a2b" target="_blank">faf9daa</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28targetblank2f9aedba"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreefaf9daac40d730cf1e8f251782911342c1181a2btargetblankfaf9daaa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -572,7 +569,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28" target="_blank">2f9aedb</a>.
+<a href="https://github.com/markelly4/myproject/tree/faf9daac40d730cf1e8f251782911342c1181a2b" target="_blank">faf9daa</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -589,10 +586,6 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Unstaged changes:
-    Modified:   analysis/methods.Rmd
-    Modified:   data/final_df.csv
 
 </code></pre>
 <p>
@@ -638,6 +631,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/markelly4/myproject/blob/faf9daac40d730cf1e8f251782911342c1181a2b/analysis/methods.Rmd" target="_blank">faf9daa</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-11-20
+</td>
+<td>
+added code for charts
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/faf9daac40d730cf1e8f251782911342c1181a2b/docs/methods.html" target="_blank">faf9daa</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-11-20
+</td>
+<td>
+added code for charts
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1078,6 +1105,8 @@ final_df3 &lt;- final_df2 %&gt;%
 # save to csv to explore in Excel, and reorder columns
 
 write.csv(final_df3, file = &quot;data/final_df.csv&quot;, row.names=FALSE)</code></pre>
+<p>The resulting final data table was then joined back to the combined
+BpS-Succession Class data in ArcGIS Pro for mapping.</p>
 <div id="final-data-table" class="section level3">
 <h3>Final Data Table</h3>
 <pre class="r"><code>datatable(final_df3)</code></pre>
@@ -1109,39 +1138,41 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] DT_0.28         janitor_2.2.0   tmap_3.3-3      lubridate_1.9.2
- [5] forcats_1.0.0   stringr_1.5.0   dplyr_1.1.2     purrr_1.0.1    
- [9] readr_2.1.4     tidyr_1.3.0     tibble_3.2.1    ggplot2_3.4.2  
-[13] tidyverse_2.0.0 terra_1.7-39    sf_1.0-14      
+ [1] scales_1.2.1    DT_0.28         janitor_2.2.0   tmap_3.3-3     
+ [5] lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0   dplyr_1.1.2    
+ [9] purrr_1.0.1     readr_2.1.4     tidyr_1.3.0     tibble_3.2.1   
+[13] ggplot2_3.4.2   tidyverse_2.0.0 terra_1.7-39    sf_1.0-14      
+[17] workflowr_1.7.0
 
 loaded via a namespace (and not attached):
- [1] sass_0.4.7              jsonlite_1.8.7          viridisLite_0.4.2      
- [4] bslib_0.5.1             sp_2.0-0                yaml_2.3.7             
- [7] lattice_0.20-45         pillar_1.9.0            glue_1.6.2             
-[10] digest_0.6.33           RColorBrewer_1.1-3      promises_1.2.1         
-[13] snakecase_0.11.0        leaflet.providers_1.9.0 colorspace_2.1-0       
-[16] htmltools_0.5.5         httpuv_1.6.11           XML_3.99-0.14          
-[19] pkgconfig_2.0.3         raster_3.6-23           stars_0.6-2            
-[22] s2_1.1.4                scales_1.2.1            whisker_0.4.1          
-[25] later_1.3.1             tzdb_0.4.0              timechange_0.2.0       
-[28] git2r_0.32.0            proxy_0.4-27            generics_0.1.3         
-[31] ellipsis_0.3.2          cachem_1.0.8            withr_2.5.1            
-[34] leafsync_0.1.0          cli_3.6.1               magrittr_2.0.3         
-[37] evaluate_0.22           fs_1.6.3                fansi_1.0.4            
-[40] lwgeom_0.2-13           class_7.3-22            tools_4.2.2            
-[43] hms_1.1.3               lifecycle_1.0.3         munsell_0.5.0          
-[46] compiler_4.2.2          jquerylib_0.1.4         e1071_1.7-13           
-[49] rlang_1.1.1             classInt_0.4-9          units_0.8-3            
-[52] grid_4.2.2              tmaptools_3.1-1         dichromat_2.0-0.1      
-[55] rstudioapi_0.15.0       htmlwidgets_1.6.2       crosstalk_1.2.0        
-[58] base64enc_0.1-3         leafem_0.2.0            rmarkdown_2.25         
-[61] wk_0.7.3                gtable_0.3.3            codetools_0.2-19       
-[64] abind_1.4-5             DBI_1.1.3               R6_2.5.1               
-[67] knitr_1.44              fastmap_1.1.1           utf8_1.2.3             
-[70] workflowr_1.7.0         rprojroot_2.0.3         KernSmooth_2.23-20     
-[73] stringi_1.7.12          parallel_4.2.2          Rcpp_1.0.11            
-[76] png_0.1-8               vctrs_0.6.4             leaflet_2.1.2          
-[79] tidyselect_1.2.0        xfun_0.39              </code></pre>
+ [1] fs_1.6.3                RColorBrewer_1.1-3      httr_1.4.7             
+ [4] rprojroot_2.0.3         tools_4.2.2             bslib_0.5.1            
+ [7] utf8_1.2.3              R6_2.5.1                KernSmooth_2.23-20     
+[10] DBI_1.1.3               colorspace_2.1-0        raster_3.6-23          
+[13] withr_2.5.1             sp_2.0-0                tidyselect_1.2.0       
+[16] processx_3.8.2          leaflet_2.1.2           compiler_4.2.2         
+[19] git2r_0.32.0            leafem_0.2.0            cli_3.6.1              
+[22] sass_0.4.7              classInt_0.4-9          callr_3.7.3            
+[25] proxy_0.4-27            digest_0.6.33           rmarkdown_2.25         
+[28] base64enc_0.1-3         dichromat_2.0-0.1       pkgconfig_2.0.3        
+[31] htmltools_0.5.5         fastmap_1.1.1           htmlwidgets_1.6.2      
+[34] rlang_1.1.1             rstudioapi_0.15.0       jquerylib_0.1.4        
+[37] generics_0.1.3          jsonlite_1.8.7          crosstalk_1.2.0        
+[40] magrittr_2.0.3          s2_1.1.4                Rcpp_1.0.11            
+[43] munsell_0.5.0           fansi_1.0.4             abind_1.4-5            
+[46] lifecycle_1.0.3         stringi_1.7.12          leafsync_0.1.0         
+[49] whisker_0.4.1           yaml_2.3.7              snakecase_0.11.0       
+[52] tmaptools_3.1-1         grid_4.2.2              parallel_4.2.2         
+[55] promises_1.2.1          lattice_0.20-45         stars_0.6-2            
+[58] hms_1.1.3               knitr_1.44              ps_1.7.5               
+[61] pillar_1.9.0            codetools_0.2-19        wk_0.7.3               
+[64] XML_3.99-0.14           glue_1.6.2              evaluate_0.22          
+[67] getPass_0.2-2           leaflet.providers_1.9.0 vctrs_0.6.4            
+[70] png_0.1-8               tzdb_0.4.0              httpuv_1.6.11          
+[73] gtable_0.3.3            cachem_1.0.8            xfun_0.39              
+[76] lwgeom_0.2-13           e1071_1.7-13            later_1.3.1            
+[79] class_7.3-22            viridisLite_0.4.2       units_0.8-3            
+[82] timechange_0.2.0        ellipsis_0.3.2         </code></pre>
 </div>
 </div>
 </div>

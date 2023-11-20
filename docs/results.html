@@ -383,7 +383,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -394,8 +394,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -408,9 +408,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>mks_project/</code> <span
@@ -433,21 +433,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of
-the R Markdown file created these results, you’ll want to first commit
-it to the Git repo. If you’re still working on the analysis, you can
-ignore this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -538,15 +535,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28targetblank2f9aedba">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreefaf9daac40d730cf1e8f251782911342c1181a2btargetblankfaf9daaa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/markelly4/myproject/tree/2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28" target="_blank">2f9aedb</a>
+<a href="https://github.com/markelly4/myproject/tree/faf9daac40d730cf1e8f251782911342c1181a2b" target="_blank">faf9daa</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttree2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28targetblank2f9aedba"
+id="strongRepositoryversionstrongahrefhttpsgithubcommarkelly4myprojecttreefaf9daac40d730cf1e8f251782911342c1181a2btargetblankfaf9daaa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -556,7 +553,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/markelly4/myproject/tree/2f9aedb2e4fb6f54985bf1ad8c43e4347a95aa28" target="_blank">2f9aedb</a>.
+<a href="https://github.com/markelly4/myproject/tree/faf9daac40d730cf1e8f251782911342c1181a2b" target="_blank">faf9daa</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -573,11 +570,6 @@ were generated:
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Unstaged changes:
-    Modified:   analysis/methods.Rmd
-    Modified:   analysis/results.Rmd
-    Modified:   data/final_df.csv
 
 </code></pre>
 <p>
@@ -623,6 +615,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/markelly4/myproject/blob/faf9daac40d730cf1e8f251782911342c1181a2b/analysis/results.Rmd" target="_blank">faf9daa</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-11-20
+</td>
+<td>
+added code for charts
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/markelly4/myproject/faf9daac40d730cf1e8f251782911342c1181a2b/docs/results.html" target="_blank">faf9daa</a>
+</td>
+<td>
+rswaty
+</td>
+<td>
+2023-11-20
+</td>
+<td>
+added code for charts
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1123,22 +1149,23 @@ attached base packages:
 other attached packages:
  [1] scales_1.2.1    lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0  
  [5] dplyr_1.1.2     purrr_1.0.1     readr_2.1.4     tidyr_1.3.0    
- [9] tibble_3.2.1    ggplot2_3.4.2   tidyverse_2.0.0
+ [9] tibble_3.2.1    ggplot2_3.4.2   tidyverse_2.0.0 workflowr_1.7.0
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.2.0  xfun_0.39         bslib_0.5.1       colorspace_2.1-0 
  [5] vctrs_0.6.4       generics_0.1.3    htmltools_0.5.5   yaml_2.3.7       
  [9] utf8_1.2.3        rlang_1.1.1       jquerylib_0.1.4   later_1.3.1      
 [13] pillar_1.9.0      glue_1.6.2        withr_2.5.1       lifecycle_1.0.3  
-[17] munsell_0.5.0     gtable_0.3.3      workflowr_1.7.0   evaluate_0.22    
-[21] labeling_0.4.2    knitr_1.44        tzdb_0.4.0        fastmap_1.1.1    
-[25] httpuv_1.6.11     fansi_1.0.4       Rcpp_1.0.11       promises_1.2.1   
-[29] cachem_1.0.8      jsonlite_1.8.7    farver_2.1.1      fs_1.6.3         
-[33] hms_1.1.3         digest_0.6.33     stringi_1.7.12    rprojroot_2.0.3  
-[37] grid_4.2.2        cli_3.6.1         tools_4.2.2       magrittr_2.0.3   
-[41] sass_0.4.7        whisker_0.4.1     pkgconfig_2.0.3   timechange_0.2.0 
-[45] rmarkdown_2.25    rstudioapi_0.15.0 R6_2.5.1          git2r_0.32.0     
-[49] compiler_4.2.2   </code></pre>
+[17] munsell_0.5.0     gtable_0.3.3      evaluate_0.22     labeling_0.4.2   
+[21] knitr_1.44        callr_3.7.3       tzdb_0.4.0        fastmap_1.1.1    
+[25] httpuv_1.6.11     ps_1.7.5          fansi_1.0.4       Rcpp_1.0.11      
+[29] promises_1.2.1    cachem_1.0.8      jsonlite_1.8.7    farver_2.1.1     
+[33] fs_1.6.3          hms_1.1.3         digest_0.6.33     stringi_1.7.12   
+[37] processx_3.8.2    getPass_0.2-2     rprojroot_2.0.3   grid_4.2.2       
+[41] cli_3.6.1         tools_4.2.2       magrittr_2.0.3    sass_0.4.7       
+[45] whisker_0.4.1     pkgconfig_2.0.3   timechange_0.2.0  rmarkdown_2.25   
+[49] httr_1.4.7        rstudioapi_0.15.0 R6_2.5.1          git2r_0.32.0     
+[53] compiler_4.2.2   </code></pre>
 </div>
 </div>
 </div>
