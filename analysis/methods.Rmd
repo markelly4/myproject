@@ -14,7 +14,46 @@ The area of interest for this project is the western coast of Oregon (area west 
 All maps were created in ArcGIS Pro. All charts were plotted in R/R-Studio.
 
 
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Study_Area_MapZone2" src="//northernmichu.maps.arcgis.com/apps/Embed/index.html?webmap=a5f6b8578bf2444eaf19220893cfcf65&extent=-138.3318,20.6047,-52.1111,52.3035&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe></div>
+
+<br>
+
+```{r libraries, message=FALSE, warning=FALSE, include=FALSE}
+
+library(sf)
+library(terra)
+library(tidyverse)
+library(tmap)
+
+```
+
+
+```{r read shapefile, message=FALSE, warning=FALSE, include=FALSE}
+#  read shape
+shp <- st_read("data/mz2.shp") %>% 
+  st_transform(crs = 5070) %>%
+  st_union() %>%
+  st_sf()
+```
+
+```{r locator map, message=FALSE, warning=FALSE, echo=FALSE}
+
+
+# toggle tmap mode to interactive viewing
+tmap_mode("view")
+
+# create a quick interactive map
+quickmap <- qtm(shp, 
+                borders = "darkgreen", 
+                fill = NULL, 
+                check.and.fix = TRUE, 
+                basemaps = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+                title = 'LANDFIRE Map Zone 2',)
+
+quickmap
+
+
+
+```
 
 Figure 2. Study Area Map
 
@@ -34,7 +73,7 @@ We relied on these 3 LANDFIRE products:
 
 ### Ecosystem footprints
 
-One LANDFIRE dataset we relied on is called ["Biophysical Settings" (BpS)](https://landfire.gov/bps.php). This dataset is a modeled depiction of the dominant vegetation systems prior to European colonization. It was developed with many abiotic inputs such as soils, surface geology and many climate inputs. You can think of the map as 'potential ecosystem footprints.
+We relied on LANDFIRE's ["Biophysical Settings" (BpS)](https://landfire.gov/bps.php) to obtain 'potential ecosystem footprints'. This dataset is a modeled depiction of the dominant vegetation systems prior to European colonization. It was developed with many abiotic inputs such as soils, surface geology and many climate inputs. 
 
 Each BpS, such as a "western hemlock douglas fir forest" is accompanied by a description that includes information on its succession classes and a model which captures historical disturbances and estimated amounts of succession classes.
 
