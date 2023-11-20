@@ -23,6 +23,9 @@ library(sf)
 library(terra)
 library(tidyverse)
 library(tmap)
+library(janitor)
+library(DT)
+library(scales)
 
 ```
 
@@ -103,20 +106,20 @@ The rules for defining the structural characteristics of each succession class a
 
 Once we have clipped, combined and attributed spatial data in ArcGIS pro, we need to do a little data wrangling in R to further prep the spatial data for mapping and to make some charts.  In summary we:
 
-1. Read the combined data attribute table and supporting data tables from LANDFIRE into R
+1. Read the combined data attribute table and supporting data tables from LANDFIRE into R (all located in 'data' directory in Git repo)
+    * BpS-Succession Class Combined attribute table (named "bps_scl_cmbn.csv")
+    * Succession Class Descriptions (named "scls_descriptions.csv")
+    * Reference condition percentages (named "ref_con_long.csv")
+    * Map Zone 2 Biophysical Settings (named "bps_mz2.csv")
 2. Build and join in succession class 'descriptions' (e.g., 'Late1-Closed')
 3. Do a little cleaning, and make a new 'join_field'
 4. Calculate reference and current acres per succession class per BpS
 
-Click the "Show" button to see code.  Data tables can be viewed below. 
+Click the "Show" button to see code.  Final data table can be explored below.  
 <br>
 
-Click the 
-```{r wrangling data, message=FALSE, warning=FALSE}
-## load packages
 
-library(janitor)
-library(tidyverse)
+```{r wrangling data, message=FALSE, warning=FALSE}
 
 ## read in raw data and sclass descriptions
 
@@ -132,13 +135,13 @@ bps_mz2 <- read.csv("data/bps_mz2.csv")
 
 clean_bps_scls_cmbn <- raw_bps_scls %>%
   clean_names() %>%
-  select(-c(4, 5)) %>%
+  dplyr::select(-c(4, 5)) %>%
   unite("join_field", bps_model,label, sep = "_", remove = FALSE )
 
 ## clean and prep sclass descriptions
 
 sclass_descriptions_clean <- sclass_descriptions %>%
-  select(-c(4)) %>% # remove column
+  dplyr::select(-c(4)) %>% # remove column
   rename("model_code" = "StratumID",
          "scls_label" = "ClassLabelID",
          "state_class_id" = "StateClassID" ) %>% # rename columns
@@ -149,10 +152,10 @@ sclass_descriptions_clean <- sclass_descriptions %>%
 ## clean and prep reference percents
 
 unique_sclass_labels_ref <- unique(reference_percents$refLabel)
-print(unique_sclass_labels_ref)
+#print(unique_sclass_labels_ref)
 
 unique_sclass_lables_cmbn <- unique(clean_bps_scls_cmbn$label)
-print(unique_sclass_lables_cmbn)
+#print(unique_sclass_lables_cmbn)
 # does not have barren/sparse and there are differences, e.g., Urban-Developed between this and sclass label
 # will assume Barren/Sparse, NoData and Snow/Ice is minimal; will change "Developed" to "Urban" in reference df cleaning code 
 
@@ -178,7 +181,7 @@ final_df <- left_join(clean_ref_percents_mz2, sclass_descriptions_clean)
 # looks OK, now full join to add reference percents then clean a bit
 
 final_df2 <- full_join(final_df, clean_bps_scls_cmbn) %>%
-  select(-c(6, 10, 13, 14)) %>%
+  dplyr::select(-c(6, 10, 13, 14)) %>%
   rename( "cur_scls_count" = "count")
 
 # now for the math: need count/acres per bps, cur sclass percents and differences
@@ -202,6 +205,16 @@ write.csv(final_df3, file = "data/final_df.csv", row.names=FALSE)
 
 ```
 
+
+The resulting final data table was then joined back to the combined BpS-Succession Class data in ArcGIS Pro for mapping. 
+
+
+### Final Data Table
+
+```{r final data table, message=FALSE, warning=FALSE}
+datatable(final_df3)
+
+```
 
 
 
